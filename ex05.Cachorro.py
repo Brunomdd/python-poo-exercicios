@@ -38,27 +38,27 @@
 
 
 class Cachorro:
-    def __init__(self,nome,ração):
+    def __init__(self,nome:str,racao:str):
         self.nome = nome
-        self.ração = ração
+        self.racao = racao
     @classmethod
 
-    def cachorro_nome(cLs,nome,ração):
-        return cLs(nome,ração)
+    def cachorro_nome(cLs,nome,racao:str)-> "Cachorro":
+        return cLs(nome,racao)
 
     @classmethod
-    def saudar(Cls,nome):
+    def saudar(Cls,nome:str) -> None:
         print(nome)
-    @classmethod
-    def cachorro_sem_nome(cLs,ração):
-        return cLs('Anônimo',ração)
         
-
+    @classmethod
+    def cachorro_sem_nome(cLs,racao:str) -> "Cachorro":
+        return cLs('Anônimo',racao)
+        
 dog = Cachorro.cachorro_nome('Rex','Premium')
-print(dog.nome,dog.ração)
+print(dog.nome,dog.racao)
 saudar = Cachorro.saudar(f'Meu cachorro favorito')
 sem_nome = Cachorro.cachorro_sem_nome('Carne')
-print(sem_nome.nome,sem_nome.ração)
+print(sem_nome.nome,sem_nome.racao)
 
 
 
